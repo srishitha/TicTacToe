@@ -7,8 +7,23 @@ public static int[][] ticbox;
 	public static int win(int [][]tic) {
 		//check all rows
 		//loop through rows from 0 to 3 and check if all the 3 places have same marks
- 		
-		
+		for( int row=0; row<3; row++ ) {
+ 			if( tic[row][0] == 1 && tic[row][1]== 1 && tic[row][2]== 1) {
+ 				return 1;
+ 			}
+ 			if( tic[row][0] == 2 && tic[row][1]== 2 && tic[row][2]== 2) {
+ 				return 2;
+ 			}
+ 		}
+
+ 		for( int col=0; col<3; col++ ) {
+ 			if( tic[0][col] == 1 && tic[1][col] == 1 && tic[2][col] == 1) {
+ 				return 1;
+ 			}
+ 			if( tic[0][col] == 2 && tic[1][col] == 2 && tic[2][col] == 2) {
+ 				return 2;
+ 			}
+ 		}		
 		//check all cols
 		//loop through columns from 0 to 3 and check if all the 3 places have same marks
  		
@@ -17,12 +32,16 @@ public static int[][] ticbox;
 		
 		
 		//write your code here !!!
-		
-		
-		
+ 		if( (tic[0][0]==1 && tic[1][1]==1 && tic[2][2]==1) || (tic[0][2]==1 && tic[1][1]==1 && tic[2][0]==1 ) )
+			return 1;
+
+		if( (tic[0][0]==2 && tic[1][1]==2 && tic[2][2]==2) || (tic[0][2]==2 && tic[1][1]==2 && tic[2][0]==2 ) )
+			return 2;
+
 		return 0;
-		
 	}
+	
+
 	
 	public static void printBox(int [][]tic) {
 		for(int i=0;i<3;i++) {
@@ -40,6 +59,16 @@ public static int[][] ticbox;
 		
 		
 		//Write your code here !!!
+		if( a1>=0 && a1<3 ) {
+
+			if( a2>=0 && a2<3 ) {
+
+				if( tic[a1][a2]== 0 ) {
+
+					return true;
+				}
+			}
+		}
 		
 		
 		return false;
